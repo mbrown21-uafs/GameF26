@@ -7,6 +7,7 @@ public abstract class GameObject {
 	public int x;
 	public int y;
 	public int speed;
+	public int vSpeed;
 	public int size;
 	public Color color;
 	

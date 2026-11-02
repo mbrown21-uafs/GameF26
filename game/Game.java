@@ -14,7 +14,7 @@ public class Game extends JPanel implements Runnable{
 	public Dimension dim;
 	public boolean running;
 	public Thread gameLoop;
-	public Ball ball;
+	public Ball[] ball;
 	public Player player;
 	
 	public Game() {}
@@ -30,7 +30,12 @@ public class Game extends JPanel implements Runnable{
 		this.setPreferredSize(dim);
 		this.window.add(this);
 		this.setBackground(Color.black);
-		this.ball = new Ball(150,150,1,75,Color.blue);
+		this.ball = new Ball[10];
+		
+		for(int index = 0; index < ball.length; index++) {
+			ball[index] = new Ball();
+		}
+		
 		this.player = new Player(400,500,3,100,Color.green);
 		this.addKeyListener(player);
 		this.window.setVisible(true);
@@ -39,12 +44,18 @@ public class Game extends JPanel implements Runnable{
 	}
 	
 	public void update() {
-		ball.update();
+		for(int index = 0; index < ball.length; index++) {
+			ball[index].update();
+		}
+		
 		player.update();
 	}
 	
 	public void render(Graphics g) {
-		ball.render(g);
+		for(int index = 0; index < ball.length; index++) {
+			ball[index].render(g);
+		}
+
 		player.render(g);
 	}
 	
@@ -77,7 +88,8 @@ public class Game extends JPanel implements Runnable{
 	}
 	
 	public static void main(String[] args) {
-		Game game = new Game("Game Fall 2026",800,700);
+		Game game = new Game("Game Fall 2026",900,850);
+		Ball ball = new Ball();
 		
 	}
 }
