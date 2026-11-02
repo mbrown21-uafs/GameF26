@@ -30,7 +30,7 @@ public class Game extends JPanel implements Runnable{
 		this.setPreferredSize(dim);
 		this.window.add(this);
 		this.setBackground(Color.black);
-		this.ball = new Ball[10];
+		this.ball = new Ball[50];
 		
 		for(int index = 0; index < ball.length; index++) {
 			ball[index] = new Ball();
