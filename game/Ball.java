@@ -51,13 +51,22 @@ public class Ball extends GameObject{
 		Color[] colors = {Color.GREEN, Color.BLUE, 
 				Color.RED, Color.ORANGE, Color.YELLOW};
 		
-		
+		this.x = r.nextInt(400) + 10;
+		this.y = r.nextInt(400) + 10;
 		this.size = r.nextInt(100) + 10;
 		this.color = colors[r.nextInt(5)];
 		this.speed = r.nextInt(5) + 1;
 		this.vSpeed = r.nextInt(5) + 1;
 		
+		if(r.nextBoolean()) {
+			
+			
+		}else {
+			this.speed = this.speed * -1;
+			this.vSpeed = this.vSpeed * -1;
+		}
+		
+		
 		
 	}
-	
 }

@@ -11,6 +11,7 @@ public abstract class GameObject {
 	public int size;
 	public Color color;
 	
+	
 	public GameObject() {}
 	
 	public GameObject(int x, int y, int speed, int size, Color color) {
@@ -19,6 +20,7 @@ public abstract class GameObject {
 		this.speed=speed;
 		this.size=size;
 		this.color=color;
+		
 	}
 	
 	public abstract void update();
